@@ -1,8 +1,7 @@
-
-public class Produto implements Mercado{
+public class Produto {
     private String nome;
-    private float preco;
-    private int quantidade;
+    private Float preco;
+    private int quanidade;
 
     public String getNome() {
         return nome;
@@ -12,33 +11,19 @@ public class Produto implements Mercado{
         this.nome = nome;
     }
 
-    public float getPreco() {
+    public Float getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(Float preco) {
         this.preco = preco;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuanidade() {
+        return quanidade;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public void addproduto(Produto p){
-        if (p != null) {
-            p.nome = this.nome;
-            p.quantidade = this.quantidade;
-            p.preco = this.preco;
-        }
-    }
-
-    @Override
-    public void precotot() {
-        Mercado.super.precotot();
-
+    public void setQuanidade(int quanidade) {
+        this.quanidade = quanidade;
     }
 }
