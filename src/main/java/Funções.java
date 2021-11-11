@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public interface Funções {
+public interface Funções {
+    void addproduto(Produto produto);
+
+
 }
