@@ -13,12 +13,13 @@ public class Main {
         do {
             Produto prodaux = new Produto();
             System.out.println("entre com o nome do produto");
-            prodaux.nome = teclado.nextLine();
+            prodaux.setNome(teclado.nextLine());
             System.out.println("Entre com a quantidade do produto");
-            prodaux.quantidade= teclado.nextInt();
+            prodaux.setQuantidade(teclado.nextInt());
             produtos.addproduto(prodaux);
             System.out.println("Deseja entrar com alguma outra opção? Digite ' -1 ' caso não queira entrar com mais nenhum produto");
             i=teclado.nextInt();
+
         }while (i != -1);
 
     }
