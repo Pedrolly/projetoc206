@@ -1,22 +1,13 @@
 public class Produto {
-    private String nome;
-    private Float preco;
     private int quanidade;
+    private int tipo;
 
-    public String getNome() {
-        return nome;
+    public int getTipo() {
+        return tipo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Float getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Float preco) {
-        this.preco = preco;
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 
     public int getQuanidade() {

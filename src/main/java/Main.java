@@ -5,24 +5,25 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         Mercado mercado = new Mercado();
         int num;
-        System.out.println("entre com a opção que deseja: 1- adicionar um produto,2-mostrar o total dos produtos,");
+        System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mkostra o carrinho");
         num = teclado.nextInt();
         menu:
         while (num != -1) {
             switch (num) {
                 case 1:
-                    Produto prodaux = new Produto();
-                    teclado.nextLine();
-                    System.out.println("entre com o nome do produto");
-                         prodaux.setNome(teclado.nextLine());
-                    System.out.println("Entre com a quantidade do produto");
-                    prodaux.setQuanidade(teclado.nextInt());
-                     mercado.addproduto(prodaux);
+                    Produto proaux = new Produto();
+                    System.out.println("entre com a opção que deseja:1- Carne:10 g = 5R$,2-Bicoito:1 unidade = 4 R$, 3:Suco: 1 unidade = 6 R$");
+                    proaux.setTipo(teclado.nextInt());
+                    System.out.println("quantas unidades ou quantas gramas");
+                    proaux.setQuanidade(teclado.nextInt());
+
+                    mercado.addproduto(proaux);
                     break;
                 case 2:
-
+                    mercado.calcpreço();
             }
-            System.out.println("Deseja entrar com alguma outra opção? Digite ' -1 ' caso não queira entrar com mais nenhum produto");
+            System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mkostra o carrinho");
+            System.out.println("Digite ' -1 ' caso não queira entrar com mais nenhum produto");
             num = teclado.nextInt();
         }
     }
