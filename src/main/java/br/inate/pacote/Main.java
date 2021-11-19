@@ -5,7 +5,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Mercado mercado = new Mercado();
+        Cliente cliente = new Cliente();
         int num;
+        System.out.println("entre com o seu nome");
+        cliente.setNome(teclado.nextLine());
+        System.out.println("entre com o seu CPF");
+        cliente.setCpf(teclado.nextLine());
+        System.out.println("entre com o seu endereço");
+        cliente.setEndereco(teclado.nextLine());
         System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mkostra o carrinho");
         num = teclado.nextInt();
         menu:
