@@ -1,3 +1,4 @@
+package br.inate.pacote;
 import java.util.Scanner;
 
 public class Main {
