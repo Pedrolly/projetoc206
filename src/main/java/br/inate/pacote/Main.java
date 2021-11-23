@@ -24,7 +24,6 @@ public class Main {
                     proaux.setTipo(teclado.nextInt());
                     System.out.println("quantas unidades ou quantas gramas");
                     proaux.setQuanidade(teclado.nextInt());
-
                     mercado.addproduto(proaux);
                     break;
                 case 2:

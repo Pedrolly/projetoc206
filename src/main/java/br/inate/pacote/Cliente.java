@@ -30,13 +30,4 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-
-
-
-
-
-
-    public void listarCompras(){
-
-    }
 }
