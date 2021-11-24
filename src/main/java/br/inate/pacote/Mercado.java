@@ -9,9 +9,9 @@ public class Mercado implements Funções {
     @Override
     public void addproduto(Produto produto) {
         for (int i = 0; i < produtos.length; i++) {
-            if (produtos[i] == null) {
+            if (produtos[i] == null){
                 produtos[i] = produto;
-                arq.inserir(produto);
+                arq.inserir(Integer.toString(produtos[i]));
                 break;
             }
         }
@@ -27,7 +27,7 @@ public class Mercado implements Funções {
 
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] != null && produtos[i].getTipo() == 1) {
-                somatotcarne = produtos[i].getQuanidade() * 5;
+                somatotcarne = (produtos[i].getQuanidade() * 5);
             }
             if (produtos[i] != null && produtos[i].getTipo() == 2) {
                 somatotbiscoito = produtos[i].getQuanidade() * 4;

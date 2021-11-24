@@ -8,7 +8,7 @@ public class Arquivo {
         OutputStream op;
         OutputStreamWriter osw;
         BufferedWriter bw = null;
-        Mercado merc = new Mercado();
+        Mercado mercado = new Mercado();
         try {
 
             //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
@@ -17,13 +17,43 @@ public class Arquivo {
             osw = new OutputStreamWriter(op);
             bw = new BufferedWriter(osw);
 
-            p.setPreço(merc.botaropreço());
+            Produto prod = new Produto();
+            prod.setPreço(mercado.botaropreço());
             bw.write("-------------Produto-------------\n");
-            bw.write("os tipos de produtos " + p.getTipo() + "\n");
-            bw.write("quantidade de produtos " + p.getQuanidade() + "\n");
-            bw.write("preço total da compra " + p.getPreço() + "\n");
-            bw.write("-------------novo Produto-------------\n");
+            bw.write("os tipos de produtos " + prod.getTipo() + "\n");
+            bw.write("quantidade de produtos " + prod.getQuanidade() + "\n");
+            bw.write("preço total da compra " + prod.getPreço() + "\n");
 
+
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+
+            try {
+                bw.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public void inserirc(Cliente c) {
+        OutputStream op;
+        OutputStreamWriter osw;
+        BufferedWriter bw = null;
+        Mercado mercado = new Mercado();
+        try {
+
+            //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
+            //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
+            op = new FileOutputStream("lista de compras.txt", true);
+            osw = new OutputStreamWriter(op);
+            bw = new BufferedWriter(osw);
+            Cliente cliente = new Cliente();
+            bw.write("--------usuario--------\n");
+            bw.write("nome: " + cliente.getNome() + "\n");
+            bw.write("cpf: " + cliente.getCpf() + "\n");
+            bw.write("Endereço: " + cliente.getEndereco() + "\n");
 
         } catch (IOException e) {
             System.out.println(e);

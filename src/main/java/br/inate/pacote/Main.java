@@ -1,4 +1,6 @@
 package br.inate.pacote;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +8,7 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         Mercado mercado = new Mercado();
         Cliente cliente = new Cliente();
+        Arquivo arq = new Arquivo();
         int num;
         System.out.println("entre com o seu nome");
         cliente.setNome(teclado.nextLine());
@@ -13,7 +16,8 @@ public class Main {
         cliente.setCpf(teclado.nextLine());
         System.out.println("entre com o seu endereço");
         cliente.setEndereco(teclado.nextLine());
-        System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mkostra o carrinho");
+        arq.inserirc(cliente);
+        System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mostra o carrinho");
         num = teclado.nextInt();
         menu:
         while (num != -1) {
