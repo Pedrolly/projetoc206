@@ -11,7 +11,8 @@ public class Mercado implements Funções {
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] == null){
                 produtos[i] = produto;
-                arq.inserir(Integer.toString(produtos[i]));
+                produto.setPreço(carrinho);
+                arq.inserir(produto);
                 break;
             }
         }
@@ -37,7 +38,8 @@ public class Mercado implements Funções {
             }
         }
         carrinho = somatotbiscoito + somatotcarne + somatotsuco;
-        System.out.println("o preço total foi de: "+carrinho);
+        System.out.println("o preço total foi de: "+carrinho+" R$");
+
     }
 
     public float botaropreço() {

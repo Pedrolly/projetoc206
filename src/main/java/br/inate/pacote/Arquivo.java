@@ -8,21 +8,27 @@ public class Arquivo {
         OutputStream op;
         OutputStreamWriter osw;
         BufferedWriter bw = null;
-        Mercado mercado = new Mercado();
         try {
 
             //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
             //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
-            op = new FileOutputStream("lista de compras.txt", true);
+            op = new FileOutputStream("lista-de-compras.txt", true);
             osw = new OutputStreamWriter(op);
             bw = new BufferedWriter(osw);
 
-            Produto prod = new Produto();
-            prod.setPreço(mercado.botaropreço());
+
             bw.write("-------------Produto-------------\n");
-            bw.write("os tipos de produtos " + prod.getTipo() + "\n");
-            bw.write("quantidade de produtos " + prod.getQuanidade() + "\n");
-            bw.write("preço total da compra " + prod.getPreço() + "\n");
+            if (p.getTipo() == 1) {
+                bw.write("produto pedido: Carne\n");
+            }
+            if (p.getTipo() == 2) {
+               bw.write("produto pedido: Biscoito(s)\n");
+            }
+            if (p.getTipo() == 3) {
+                bw.write("produto pedido: Suco(s)\n");
+            }
+            bw.write("quantidade de produtos " + p.getQuanidade() + "\n");
+
 
 
         } catch (IOException e) {
@@ -46,14 +52,14 @@ public class Arquivo {
 
             //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
             //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
-            op = new FileOutputStream("lista de compras.txt", true);
+            op = new FileOutputStream("lista-de-compras.txt", true);
             osw = new OutputStreamWriter(op);
             bw = new BufferedWriter(osw);
-            Cliente cliente = new Cliente();
+
             bw.write("--------usuario--------\n");
-            bw.write("nome: " + cliente.getNome() + "\n");
-            bw.write("cpf: " + cliente.getCpf() + "\n");
-            bw.write("Endereço: " + cliente.getEndereco() + "\n");
+            bw.write("nome: " + c.getNome() + "\n");
+            bw.write("cpf: " + c.getCpf() + "\n");
+            bw.write("Endereço: " + c.getEndereco() + "\n");
 
         } catch (IOException e) {
             System.out.println(e);
@@ -74,7 +80,7 @@ public class Arquivo {
         ArrayList<Produto> produtos = new ArrayList<>();
 
         try {
-            is = new FileInputStream("lista de compras.txt");
+            is = new FileInputStream("lista-de-compras.txt");
             isr = new InputStreamReader(is);
             br = new BufferedReader(isr);
 
@@ -104,9 +110,45 @@ public class Arquivo {
         for (int i = 0; i < produtos.size(); i++) {
             System.out.println("-----------------------------------------");
             System.out.println("quantidade " + produtos.get(i).getQuanidade());
-            System.out.println("tipo " + produtos.get(i).getTipo());
-            System.out.println("preço total " + produtos.get(i).getPreço());
+            if (produtos.get(i).getTipo() == 1) {
+                System.out.println("produto pedido: Carne");
+            }
+            if (produtos.get(i).getTipo() == 2) {
+                System.out.println("produto pedido: Biscoito(s)");
+            }
+            if (produtos.get(i).getTipo() == 3) {
+                System.out.println("produto pedido: Suco(s)");
+            }
         }
         return produtos;
+    }
+
+    public void inserirm(Mercado m) {
+        OutputStream op;
+        OutputStreamWriter osw;
+        BufferedWriter bw = null;
+        Mercado mercado = new Mercado();
+        try {
+
+            //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
+            //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
+            op = new FileOutputStream("lista-de-compras.txt", true);
+            osw = new OutputStreamWriter(op);
+            bw = new BufferedWriter(osw);
+
+            bw.write("--------Preço total--------\n");
+            bw.write("preço total: " + m.carrinho + "\n");
+
+
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+
+            try {
+                bw.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
     }
 }
