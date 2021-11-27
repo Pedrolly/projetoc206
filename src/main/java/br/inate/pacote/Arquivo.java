@@ -10,8 +10,6 @@ public class Arquivo {
         BufferedWriter bw = null;
         try {
 
-            //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
-            //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
             op = new FileOutputStream("lista-de-compras.txt", true);
             osw = new OutputStreamWriter(op);
             bw = new BufferedWriter(osw);
@@ -27,7 +25,17 @@ public class Arquivo {
             if (p.getTipo() == 3) {
                 bw.write("produto pedido: Suco(s)\n");
             }
-            bw.write("quantidade de produtos " + p.getQuanidade() + "\n");
+            //mudar aqui
+            if (p.getTipo() == 1) {
+                bw.write("quantidade de produtos " + p.getQuanidade() + " gramas"+"\n");
+            }
+            if (p.getTipo() == 2) {
+                bw.write("quantidade de produtos " + p.getQuanidade() +" unidades"+"\n");
+            }
+            if (p.getTipo() == 3) {
+                bw.write("quantidade de produtos " + p.getQuanidade() +" Caixas"+ "\n");
+            }
+
 
 
 
@@ -50,8 +58,6 @@ public class Arquivo {
         Mercado mercado = new Mercado();
         try {
 
-            //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
-            //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
             op = new FileOutputStream("lista-de-compras.txt", true);
             osw = new OutputStreamWriter(op);
             bw = new BufferedWriter(osw);
@@ -130,14 +136,12 @@ public class Arquivo {
         Mercado mercado = new Mercado();
         try {
 
-            //TRUE SALVA O ANTIGO NO ARQUIVO E ESCREVE EMBAIXO
-            //FALSE APAGA O QUE TINHA NO ARQUIVO ANTES E ESCREVE O CONTEUDO NOVO
             op = new FileOutputStream("lista-de-compras.txt", true);
             osw = new OutputStreamWriter(op);
             bw = new BufferedWriter(osw);
 
             bw.write("--------Preço total--------\n");
-            bw.write("preço total: " + m.carrinho + "\n");
+            bw.write("preço total: " + m.carrinho +" R$" +"\n");
 
 
         } catch (IOException e) {

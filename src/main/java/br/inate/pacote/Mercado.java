@@ -28,7 +28,7 @@ public class Mercado implements Funções {
 
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] != null && produtos[i].getTipo() == 1) {
-                somatotcarne = (produtos[i].getQuanidade() * 5);
+                somatotcarne = (produtos[i].getQuanidade()*2);
             }
             if (produtos[i] != null && produtos[i].getTipo() == 2) {
                 somatotbiscoito = produtos[i].getQuanidade() * 4;
@@ -42,7 +42,4 @@ public class Mercado implements Funções {
 
     }
 
-    public float botaropreço() {
-    return carrinho;
-    }
 }

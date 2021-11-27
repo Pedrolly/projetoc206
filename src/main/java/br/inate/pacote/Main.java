@@ -24,7 +24,7 @@ public class Main {
             switch (num) {
                 case 1:
                     Produto proaux = new Produto();
-                    System.out.println("entre com a opção que deseja:1- Carne:10 g = 5R$,2-Bicoito:1 unidade = 4 R$, 3:Suco: 1 unidade = 6 R$");
+                    System.out.println("entre com a opção que deseja:1- Carne:1g = 2R$,2-Bicoito:1 unidade = 4 R$, 3:Suco: 1 unidade = 6 R$");
                     proaux.setTipo(teclado.nextInt());
                     System.out.println("quantas unidades ou quantas gramas");
                     proaux.setQuanidade(teclado.nextInt());
@@ -35,7 +35,7 @@ public class Main {
                     arq.inserirm(mercado);
                     break;
             }
-            System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mkostra o carrinho");
+            System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mostra o carrinho");
             System.out.println("Digite ' -1 ' caso não queira entrar com mais nenhum produto");
             num = teclado.nextInt();
         }
