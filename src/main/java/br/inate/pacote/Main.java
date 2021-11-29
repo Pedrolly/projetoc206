@@ -34,6 +34,7 @@ public class Main {
                     mercado.calcpreço();
                     arq.inserirm(mercado);
                     break;
+
             }
             System.out.println("entre com o que deseja iniciar 1-adiciona um produto, 2- mostra o carrinho");
             System.out.println("Digite ' -1 ' caso não queira entrar com mais nenhum produto");
